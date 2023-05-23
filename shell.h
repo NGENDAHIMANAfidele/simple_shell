@@ -64,7 +64,7 @@ typedef struct passinfo
 	int status;
 
 	char **cmd_buf;
-	int cmd_buf_types;
+	int cmd_buf_type;
 	int readfd;
 	int histcount;
 } info_t;
@@ -118,4 +118,28 @@ int _putsfd(char *str, int fd);
 void clear_info(info_t *info);
 void set_info(info_t *info, char **av);
 /*historty*/
+char *get_history_file(info_t *info);
+int write_history(info_t *info);
+int read_history(info_t *info);
+int build_history_list(info_t *info, char *buf, int linecount);
+int renumber_history(info_t *info);
+/*parser*/
 
+int is_cmd(info_t *info, char *path);
+char *dup_chars(char *pathstr, int start, int stop);
+char *find_path(info_t *info, char *pathstr, char *cmd);
+/*string*/
+
+char *_strcpy(char *dest, char *src);
+char *_strdup(const char *str);
+void _puts(char *str);
+int _putchar(char c);
+/*vars*/
+
+int is_chain(info_t *info, char *buf, size_t *p);
+void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len);
+int replace_alias(info_t *info);
+int replace_vars(info_t *info);
+int replace_string(char **old, char *new);
+
+#endif

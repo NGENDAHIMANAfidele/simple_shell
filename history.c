@@ -7,7 +7,7 @@ char *get_history_file(info_t *info)
 	dir = _getenv(info, "HOME=");
 	if (!dir)
 		return (NULL);
-	buf = malloc(sizeof(char) * (_strlen(dir) + _ strlen(HIST_FILE) + 2));
+	buf = malloc(sizeof(char) * (_strlen(dir) + _strlen(HIST_FILE) + 2));
 	if (!buf)
 		return (NULL);
 	buf[0] = 0;
@@ -28,7 +28,7 @@ int write_history(info_t *info)
 	filename = get_history_file(info);
 	if (!filename)
 		return (-1);
-	fd = open(filename, O_CREAT | O_TRUNC | 0_RDWR, 0644);
+	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
 	free(filename);
 	if (fd == -1)
 		return (-1);
@@ -54,7 +54,7 @@ int read_history(info_t *info)
 	linecount = 0;
 	fsize = 0;
 	buf = NULL;
-	filename = get-history_file(info);
+	filename = get_history_file(info);
 
 	if (!filename)
 		return (0);

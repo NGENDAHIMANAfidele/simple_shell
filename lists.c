@@ -13,7 +13,7 @@ list_t *add_node(list_t **head, const char *str, int num)
 	new_head->num = num;
 	if (str)
 	{
-		new_haed->str = _strdup(str);
+		new_head->str = _strdup(str);
 		if (!new_head->str)
 		{
 			free(new_head);
@@ -41,7 +41,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 	new_node->num = num;
 	if (str)
 	{
-		new_node-> _strdup(str);
+		new_node->str = _strdup(str);
 		if (!new_node->str)
 		{
 			free(new_node);
@@ -70,7 +70,7 @@ size_t print_list_str(const list_t *h)
 		_puts(h->str ? h->str : "(nil)");
 		_puts("\n");
 		h = h->next;
-		i+=;
+		i++;
 	}
 	return (i);
 }
@@ -79,7 +79,9 @@ size_t print_list_str(const list_t *h)
 int delete_node_at_index(list_t **head, unsigned int index)
 {
 	list_t *node, *prev_node;
-	unigned int i = 0;
+	unsigned int i;
+
+	i = 0;
 
 	if (!head || !*head)
 		return (0);
@@ -92,15 +94,15 @@ int delete_node_at_index(list_t **head, unsigned int index)
 		free(node);
 		return (1);
 	}
-	node = *haed;
+	node = *head;
 	while (node)
 	{
 		if (i == index)
 		{
 			prev_node->next = node->next;
 			free(node->str);
-			free(node)
-				return (1);
+			free(node);
+			return (1);
 		}
 		i++;
 		prev_node = node;
