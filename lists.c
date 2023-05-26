@@ -1,4 +1,8 @@
 #include "shell.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 /**
  * add_node - adds a node to the start of the list
  * @head: address of pointer to head node
@@ -7,7 +11,10 @@
  *
  * Return: size of list
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 list_t *add_node(list_t **head, const char *str, int num)
 {
 	list_t *new_head;
@@ -32,14 +39,25 @@ list_t *add_node(list_t **head, const char *str, int num)
 	*head = new_head;
 	return (new_head);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 /**
  * add_node_end - adds a node to the end of the list
  * @head: address of pointer to head node
  * @str: str field of node
+<<<<<<< HEAD
  * @num: node index used
  * Return: size of list
  */
 
+=======
+ * @num: node index used by history
+ *
+ * Return: size of list
+ */
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 list_t *add_node_end(list_t **head, const char *str, int num)
 {
 	list_t *new_node, *node;
@@ -72,6 +90,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 		*head = new_node;
 	return (new_node);
 }
+<<<<<<< HEAD
 /**
  * print_list_str - prints only the str element of a list_t linked list
  * @h: pointer to first node
@@ -83,6 +102,19 @@ size_t print_list_str(const list_t *h)
 	size_t i;
 
 	i = 0;
+=======
+
+/**
+ * print_list_str - prints only the str element of a list_t linked list
+ * @h: pointer to first node
+ *
+ * Return: size of list
+ */
+size_t print_list_str(const list_t *h)
+{
+	size_t i = 0;
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	while (h)
 	{
 		_puts(h->str ? h->str : "(nil)");
@@ -97,14 +129,22 @@ size_t print_list_str(const list_t *h)
  * delete_node_at_index - deletes node at given index
  * @head: address of pointer to first node
  * @index: index of node to delete
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
  * Return: 1 on success, 0 on failure
  */
 int delete_node_at_index(list_t **head, unsigned int index)
 {
 	list_t *node, *prev_node;
+<<<<<<< HEAD
 	unsigned int i;
 
 	i = 0;
+=======
+	unsigned int i = 0;
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 
 	if (!head || !*head)
 		return (0);
@@ -133,9 +173,17 @@ int delete_node_at_index(list_t **head, unsigned int index)
 	}
 	return (0);
 }
+<<<<<<< HEAD
 /**
  * free_list - frees all nodes of a list
  * @head_ptr: address of pointer to head node
+=======
+
+/**
+ * free_list - frees all nodes of a list
+ * @head_ptr: address of pointer to head node
+ *
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
  * Return: void
  */
 void free_list(list_t **head_ptr)
@@ -155,5 +203,8 @@ void free_list(list_t **head_ptr)
 	}
 	*head_ptr = NULL;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07

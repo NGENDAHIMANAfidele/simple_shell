@@ -1,8 +1,13 @@
 #include "shell.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 /**
  * _strcpy - copies a string
  * @dest: the destination
  * @src: the source
+<<<<<<< HEAD
  * Return: pointer to destination
  */
 
@@ -12,6 +17,16 @@ char *_strcpy(char *dest, char *src)
 
 	i = 0;
 	if (dest  == src || src ==  0)
+=======
+ *
+ * Return: pointer to destination
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	if (dest == src || src == 0)
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 		return (dest);
 	while (src[i])
 	{
@@ -21,6 +36,7 @@ char *_strcpy(char *dest, char *src)
 	dest[i] = 0;
 	return (dest);
 }
+<<<<<<< HEAD
 /**
  * _strdup - duplicates a string
  * @str: the string to duplicate
@@ -33,6 +49,20 @@ char *_strdup(const char *str)
 	char *ret;
 
 	length = 0;
+=======
+
+/**
+ * _strdup - duplicates a string
+ * @str: the string to duplicate
+ *
+ * Return: pointer to the duplicated string
+ */
+char *_strdup(const char *str)
+{
+	int length = 0;
+	char *ret;
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	if (str == NULL)
 		return (NULL);
 	while (*str++)
@@ -44,6 +74,7 @@ char *_strdup(const char *str)
 		ret[length] = *--str;
 	return (ret);
 }
+<<<<<<< HEAD
 /**
  * _puts - prints an input string
  * @str: the string to be printed
@@ -55,6 +86,19 @@ void _puts(char *str)
 	int i;
 
 	i = 0;
+=======
+
+/**
+ * _puts - prints an input string
+ * @str: the string to be printed
+ *
+ * Return: Nothing
+ */
+void _puts(char *str)
+{
+	int i = 0;
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	if (!str)
 		return;
 	while (str[i] != '\0')
@@ -63,6 +107,7 @@ void _puts(char *str)
 		i++;
 	}
 }
+<<<<<<< HEAD
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -70,6 +115,16 @@ void _puts(char *str)
  * On error, -1 is returned, and errno is set appropriately.
  */
 
+=======
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 int _putchar(char c)
 {
 	static int i;

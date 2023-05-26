@@ -1,5 +1,9 @@
 #include "shell.h"
+<<<<<<< HEAD
 #include "conversion.h"
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 /**
  * _myexit - exits the shell
  * @info: Structure containing potential arguments. Used to maintain
@@ -11,7 +15,11 @@ int _myexit(info_t *info)
 {
 	int exitcheck;
 
+<<<<<<< HEAD
 	if (info->argv[1])
+=======
+	if (info->argv[1]) /* If there is an exit arguement */
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	{
 		exitcheck = _erratoi(info->argv[1]);
 		if (exitcheck == -1)
@@ -47,7 +55,11 @@ int _mycd(info_t *info)
 	{
 		dir = _getenv(info, "HOME=");
 		if (!dir)
+<<<<<<< HEAD
 			chdir_ret =
+=======
+			chdir_ret = /* TODO: what should this be? */
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
@@ -92,6 +104,10 @@ int _myhelp(info_t *info)
 	arg_array = info->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
+<<<<<<< HEAD
 		_puts(*arg_array);
+=======
+		_puts(*arg_array); /* temp att_unused workaround */
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	return (0);
 }

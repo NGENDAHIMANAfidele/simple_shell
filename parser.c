@@ -1,11 +1,21 @@
 #include "shell.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 /**
  * is_cmd - determines if a file is an executable command
  * @info: the info struct
  * @path: path to the file
+<<<<<<< HEAD
  * Return: 1 if true, 0 otherwise
  */
 
+=======
+ *
+ * Return: 1 if true, 0 otherwise
+ */
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 int is_cmd(info_t *info, char *path)
 {
 	struct stat st;
@@ -13,17 +23,26 @@ int is_cmd(info_t *info, char *path)
 	(void)info;
 	if (!path || stat(path, &st))
 		return (0);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	if (st.st_mode & S_IFREG)
 	{
 		return (1);
 	}
 	return (0);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 /**
  * dup_chars - duplicates characters
  * @pathstr: the PATH string
  * @start: starting index
  * @stop: stopping index
+<<<<<<< HEAD
  * Return: pointer to new buffer
  */
 
@@ -34,6 +53,15 @@ char *dup_chars(char *pathstr, int start, int stop)
 
 	i = 0;
 	k = 0;
+=======
+ *
+ * Return: pointer to new buffer
+ */
+char *dup_chars(char *pathstr, int start, int stop)
+{
+	static char buf[1024];
+	int i = 0, k = 0;
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 
 	for (k = 0, i = start; i < stop; i++)
 		if (pathstr[i] != ':')
@@ -41,11 +69,16 @@ char *dup_chars(char *pathstr, int start, int stop)
 	buf[k] = 0;
 	return (buf);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 /**
  * find_path - finds this cmd in the PATH string
  * @info: the info struct
  * @pathstr: the PATH string
  * @cmd: the cmd to find
+<<<<<<< HEAD
  * Return: full path of cmd if found or NULL
  */
 
@@ -57,12 +90,27 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 	i = 0;
 	curr_pos = 0;
 
+=======
+ *
+ * Return: full path of cmd if found or NULL
+ */
+char *find_path(info_t *info, char *pathstr, char *cmd)
+{
+	int i = 0, curr_pos = 0;
+	char *path;
+
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	if (!pathstr)
 		return (NULL);
 	if ((_strlen(cmd) > 2) && starts_with(cmd, "./"))
 	{
+<<<<<<< HEAD
 	if (is_cmd(info, cmd))
 	return (cmd);
+=======
+		if (is_cmd(info, cmd))
+			return (cmd);
+>>>>>>> 5a066a8bd9021df4a5227b56f8f82aafa8d31b07
 	}
 	while (1)
 	{
